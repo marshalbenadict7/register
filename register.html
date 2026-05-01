@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+
+    <style>
+        body {
+            background: lightgray;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .box {
+            background: white;
+            width: 300px;
+            margin: auto;
+            margin-top: 80px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            width: 95%;
+            padding: 8px;
+            background: blue;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Register</h2>
+
+    <input type="text" id="name" placeholder="Name"><br>
+    <input type="email" id="email" placeholder="Email"><br>
+    <input type="password" id="pass" placeholder="Password"><br>
+    <input type="password" id="cpass" placeholder="Confirm Password"><br>
+
+    <button onclick="register()">Register</button>
+
+    <h3 id="msg"></h3>
+</div>
+
+<script>
+function register(){
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("pass").value;
+    let cpass = document.getElementById("cpass").value;
+    let msg = document.getElementById("msg");
+
+    if(name=="" || email=="" || pass=="" || cpass==""){
+        msg.innerHTML = "Please fill all fields";
+        msg.style.color = "red";
+    }
+    else if(pass !== cpass){
+        msg.innerHTML = "Passwords do not match";
+        msg.style.color = "red";
+    }
+    else{
+        msg.innerHTML = "Registration Successful!";
+        msg.style.color = "green";
+    }
+}
+</script>
+
+</body>
+</html>
+
+
